@@ -1,0 +1,35 @@
+Hi everyone,
+
+The class PPT for 20190909 session has been posted to course content section as "CST1204 Class Slides W3S1 20190909". 
+
+I understand it can be overwhelming to start writing your first SQL and thinking you will have to write more. The good news is that once you finish your first one, it will become easier and easier. As we discussed in the class, relational modelling is a systematical approach. It resolves real world issues by breaking down complex model into smaller and managable pieces. And that's how you should handle your SQL writing too. When you are not sure how to write a CREATE statement, make sure you got shorthand representation written down first (don't forget primary key), then apply these steps to your sample CREATE statement:
+
+1. Use entity/relationship name as <table_name>
+
+2. Use attribute name as column name, each attribute is one column
+
+3. Add column type to each column
+
+4. Add Primary Key constraint to primary key column(s)
+
+5. Add comma to the end of all columns except for the last column
+
+These steps are covered in Slide Pg12 but are worthy mentioning here as you will be applying them to the following homework (and more hands-ons, homeworks, and test one). This week's homework includes:
+
+
+1. The following assignments must be done by handwriting:
+
+Complete previous homework if not done yet: Check Blackboard for previous homework assignment. 
+
+2. The following assignments are either shorthand representations or SQLs. Please complete them in a text file (using notepad) and email the file to me as attachment. Please make sure your SQL works in Oracle Live SQL. I will test them in my Oracle server too. The email subject should be "Homework - <your last name, first name> - 20190909" and should be sent to me before Wed's class. 
+
+2.1 Write CREATE statements for all tables of TAL Distributors as shown in Figure 1-2 (all five tables). I believe all of you either have textbook or have photos of Figure 1-2. If you don't please let me know.
+
+2.2 Complete Chapter 2 exercise questions for TAL Distributors: Write shorthand representation in each case for the entity/relationship you changed, then write CREATE statement for the corresponding table. I have also uploaded the question images in the course content section as "CST1204 Week3 Homework 1".
+
+If you have hard time finishing the homework, please feel free to send me an email. I can meet you in person before Wed's class, or schedule a online meeting in other times.
+
+See you on Wednesday!
+
+Prof.
+

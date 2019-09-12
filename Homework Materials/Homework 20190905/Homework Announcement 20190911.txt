@@ -1,0 +1,44 @@
+Hi everyone,
+
+Class slide "CST1204 Class Slides W3S2 20190911" have been published to the Content section along with the sample CREATE INSERT SELECT DROP SQLs that we used in class.
+
+As we mentioned before, this week and next we are following a learning pattern which gives you a scenario and ask you to:
+
+- Normalize a bad design into 3NF
+
+- Identify entities and relationships and their primary key
+
+- Draw ERD
+
+- Write CREATE and DROP statements
+
+- Write further simple SQL statements
+
+It is ok to get confused for now. We will repeat this pattern for two more rounds so that you are more familiar with relational model and CREATE statement before test one. By that time you should be comfortable with all these tasks. This week's homework is: 
+
+
+1. For all TAL Distributors tables in Chapter 1, Figure 1-2:
+
+- Create shorthand representations. Remember to mark primary key. 
+
+- Then create CREATE statements for all tables.
+
+- Then create 1 INSERT statement + 1 SELECT for each table.
+
+2. Finish Chapter 2 exercise questions for TAL Distributors
+
+- Create shorthand representation for each scenario. You only need to write down the entities that changed.
+
+- Create CREATE statements for all changed tables
+
+3. Finish Chapter 3 exercise questions for TAL Distributors. Note Question 4 asks you to run the script file of table creation. You need to create them as a part of the homework above. 
+
+
+Some of these homework items have been assigned before and some of you have completed it. In this case please copy your answer and merge it into this week's homework. Again, homework should be submitted via email before class and the subject should be "Homework - your last name, first name - 20190911". Let me know if you have any questions. 
+
+Thanks and have a great day!
+
+Prof
+
+
+
