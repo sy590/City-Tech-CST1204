@@ -1,0 +1,23 @@
+Hi everyone,
+
+
+Class slides and the shorthand representation, CREATE statements, and ERD of TAL have been uploaded to the Contents section.
+
+
+Please note that you should submit your homework before starting of next class. Late homework will not be accepted. If you can only finish a part of the homework please submit what you have completed. It is better to submit partial homework than not submitting at all because then I have an idea on which part is difficult for you.
+
+
+Today's homework:
+
+1. Create shorthand representation and CREATE, INSERT, SELECT statement for each table in Colonial Adventure Tours (Figure 1-4 to 1-8, Pg 9 - Pg 13)
+
+2. Chapter 2 exercise questions for Colonial Adventure Tours
+
+
+Before start working on Chapter 2 exercise questions for Colonial Adventure Tours, review Chapter 2 Exercise Question 4 for TAL Distributors and the solution provided in the Content section. Make sure you understand how normalization works step by step. As always, let me know if you have any questions.
+
+
+Prof.
+
+
+
