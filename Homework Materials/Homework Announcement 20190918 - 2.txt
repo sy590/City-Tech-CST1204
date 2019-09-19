@@ -1,0 +1,13 @@
+Hi everyone,
+
+Class slides and Colonial Adventure Tours' shorthand representation, CREATE statements, ERD, and answers to Chapter 2 Ex2 have been posted to the Contents section. Please review them carefully and make sure you understand the reasoning and process behind each normalization steps.
+
+Today's homework include:
+1. Create shorthand representation and CREATE, INSERT, SELECT statement for each table in Solmaris Condominium Group  (Figure 1-4 to 1-8, Pg 9 - Pg 13)
+2. Chapter 2 exercise questions for Solmaris Condominium Group 
+3. Chapter 3 exercise questions for Solmaris Condominium Group  
+
+Please put all your answers in a text file and email it to me. As I stated in my City Tech email, we had email issues when using an email client. So please use City Tech webmail for homework submission.
+
+One more item: It looks like the Oracle server hosted on CSTTS_LAB is available. If you have hardtime using Oracle Live SQL, you can use this CSTTS_LAB Oracle as an alternative. The instruction on how to use this CSTTS_LAB Oracle is in "" and "", both in the Content section. Please let me know if you run into any issue.
+

@@ -1,0 +1,61 @@
+Answers and notes to Exercise Question 2 for Colonial Adventure Tours in Chapter 2:
+
+This is what we discussed in class. I am putting this in writing for your review.
+
+Original Form:
+TRIP (*TRIP_ID*, TRIP_NAME, STATE_ABBREVIATION, STATE_NAME, (GUIDE_NUM, GUIDE_LAST, GUIDE_FIRST))
+
+Note: 
+1. Instead of underscore, I put * on both side of the column name to mark it as the primary key.
+2. I break the 2NF/3NF normalizations into further steps for you to better understand the process -- break-out non-primary-key-dependent columns, then remove redundancy from original table. In the test, if you are comfortable with the process you can directly write down the results of each NF.
+3. If this design is put in an Excel spreadsheet, it is usually displayed as:
+*TRIP_ID*, TRIP_NAME, STATE_ABBREVIATION, STATE_NAME, GUIDE_1_NUM, GUIDE_1_LAST, GUIDE_1_FIRST, GUIDE_2_NUM, GUIDE_2_LAST, GUIDE_2_FIRST ...
+
+************************************
+*         Converted to 1NF         *
+************************************
+TRIP_GUIDE (*TRIP_ID*, TRIP_NAME, STATE_ABBREVIATION, STATE_NAME, *GUIDE_NUM*, GUIDE_LAST, GUIDE_FIRST)
+
+************************************
+*         Converted to 2NF         *
+************************************
+Step 1: Break out the two dependecies on GUIDE_NUM into a new table
+TRIP_GUIDE (*TRIP_ID*, TRIP_NAME, STATE_ABBREVIATION, STATE_NAME, *GUIDE_NUM*, GUIDE_LAST, GUIDE_FIRST)
+GUIDE (*GUIDE_NUM*, GUIDE_LAST, GUIDE_FIRST)
+
+Step 2: Remove the non-primary-key-dependent columns from the 1NF table. Note that GUIDE_NUM is a part of the primary key and hence is not removable.
+TRIP_GUIDE (*TRIP_ID*, TRIP_NAME, STATE_ABBREVIATION, STATE_NAME, *GUIDE_NUM*)
+GUIDE (*GUIDE_NUM*, GUIDE_LAST, GUIDE_FIRST)
+
+Step 3: Break out the two dependecies on TRIP_ID into a new table
+TRIP_GUIDE (*TRIP_ID*, TRIP_NAME, STATE_ABBREVIATION, STATE_NAME, *GUIDE_NUM*)
+GUIDE (*GUIDE_NUM*, GUIDE_LAST, GUIDE_FIRST)
+TRIP (*TRIP_ID*, TRIP_NAME, STATE_ABBREVIATION, STATE_NAME)
+
+Step 4: Remove the non-primary-key-dependent columns from the 1NF table. Note that TRIP_ID is a part of the primary key and hence is not removable.
+TRIP_GUIDE (*TRIP_ID*, *GUIDE_NUM*)
+GUIDE (*GUIDE_NUM*, GUIDE_LAST, GUIDE_FIRST)
+TRIP (*TRIP_ID*, TRIP_NAME, STATE_ABBREVIATION, STATE_NAME)
+
+************************************
+*         Converted to 3NF         *
+************************************
+Step 1: Break out the dependecies on non-primary-key-dependent column STATE_ABBREVIATION into a new table
+TRIP_GUIDE (*TRIP_ID*, *GUIDE_NUM*)
+GUIDE (*GUIDE_NUM*, GUIDE_LAST, GUIDE_FIRST)
+TRIP (*TRIP_ID*, TRIP_NAME, STATE_ABBREVIATION, STATE_NAME)
+STATE (*STATE_ABBREVIATION*, STATE_NAME)
+
+Step 2: Remove the the non-primary-key-dependent columns from the 2NF table. Note that STATE_ABBREVIATION is functional dependent on the primary key and hence is not removable.
+TRIP_GUIDE (*TRIP_ID*, *GUIDE_NUM*)
+GUIDE (*GUIDE_NUM*, GUIDE_LAST, GUIDE_FIRST)
+TRIP (*TRIP_ID*, TRIP_NAME, STATE_ABBREVIATION)
+STATE (*STATE_ABBREVIATION*, STATE_NAME)
+
+************************************
+*  Final Shorthand Representation  *
+************************************
+TRIP_GUIDE (*TRIP_ID*, *GUIDE_NUM*)
+GUIDE (*GUIDE_NUM*, GUIDE_LAST, GUIDE_FIRST)
+TRIP (*TRIP_ID*, TRIP_NAME, STATE_ABBREVIATION)
+STATE (*STATE_ABBREVIATION*, STATE_NAME)
