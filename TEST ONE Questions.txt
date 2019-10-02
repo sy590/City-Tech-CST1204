@@ -1,4 +1,0 @@
-1. Identify entities and relationships and their primary key. Use shorthand representation to record your result. 												
-2. Use shorthand representation, show the normalization of the spreadsheet into 1NF, 2NF, and 3NF compliant relations step by step.												
-3. Write SQL CREATE statements for entities and relationship you defined in Question #1.												
-4. Bonus point: draw ERD based on your design using crowfoot represenation.												
