@@ -1,0 +1,84 @@
+----------------------------------------------------------------
+-- Exercise Questions for TAL Distributor in Chapter 6 
+--
+-- Please write down your SQL statements below line by line in 
+--   designated place, with proper separators (;).
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+-- Exercise question 01
+----------------------------------------------------------------
+CREATE TABLE NONGAME (
+ITEM_NUM CHAR(4) PRIMARY KEY,
+DESCRIPTION CHAR(30),
+ON_HAND DECIMAL(4,0),
+CATEGORY CHAR(3),
+PRICE DECIMAL(6,2)
+);
+
+----------------------------------------------------------------
+-- Exercise question 02
+----------------------------------------------------------------
+INSERT INTO NONGAME
+SELECT
+    ITEM_NUM,
+    DESCRIPTION, 
+    ON_HAND, 
+    CATEGORY, 
+    PRICE 
+FROM ITEM
+WHERE CATEGORY <> 'GME';
+
+----------------------------------------------------------------
+-- Exercise question 03
+----------------------------------------------------------------
+UPDATE NONGAME
+SET DESCRIPTION = 'Classic Train Set'
+WHERE ITEM_NUM = 'DL51';
+
+----------------------------------------------------------------
+-- Exercise question 04
+----------------------------------------------------------------
+UPDATE NONGAME
+SET PRICE = PRICE * 1.02
+WHERE CATEGORY = 'TOY';
+
+----------------------------------------------------------------
+-- Exercise question 05
+----------------------------------------------------------------
+INSERT INTO NONGAME VALUES 
+('TL92', 'Dump Truck', 10, 'TOY', 59.95);
+
+----------------------------------------------------------------
+-- Exercise question 06
+----------------------------------------------------------------
+DELETE FROM NONGAME
+WHERE CATEGORY = 'PZL';
+
+----------------------------------------------------------------
+-- Exercise question 07
+----------------------------------------------------------------
+UPDATE NONGAME
+SET CATEGORY = NULL
+WHERE ITEM_NUM = 'FD11';
+
+----------------------------------------------------------------
+-- Exercise question 08
+----------------------------------------------------------------
+ALTER TABLE NONGAME ADD ON_HAND_VALUE DECIMAL(7, 2);
+UPDATE NONGAME SET ON_HAND_VALUE = ON_HAND * PRICE;
+
+----------------------------------------------------------------
+-- Exercise question 09
+----------------------------------------------------------------
+ALTER TABLE NONGAME MODIFY DESCRIPTION CHAR(40);
+
+----------------------------------------------------------------
+-- Exercise question 11
+----------------------------------------------------------------
+ALTER TABLE NONGAME DROP COLUMN ON_HAND_VALUE;
+
+----------------------------------------------------------------
+-- Exercise question 10
+----------------------------------------------------------------
+DROP TABLE NONGAME;
