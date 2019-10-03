@@ -1,0 +1,144 @@
+CREATE TABLE REP
+(Rep_Num Char(2) PRIMARY KEY,
+LAST_NAME CHAR(15) NOT NULL,
+FIRST_NAME CHAR(15) NOT NULL,
+STREET CHAR(15),
+CITY CHAR(15),
+STATE CHAR(2),
+POSTAL_CODE CHAR(5),
+COMMISSION DECIMAL(7,2),
+RATE DECIMAL(3,2) );
+
+INSERT INTO REP VALUES ('15','Campos','Rafael','724 Vinca Dr.','Grove','CA','90092',23457.50,0.06);
+INSERT INTO REP VALUES ('30','Grady','Megan','632 Liatris St.','Fullton','CA','90085',41317.00,0.08);
+INSERT INTO REP VALUES ('45','Tian','Hui','1785 Tyler Ave','Northfield','CA','90098',27789.25,0.06);
+
+CREATE TABLE Single_Row (id int);
+INSERT INTO Single_Row VALUES (1); 
+
+SELECT 'This is a test' from Single_Row;
+
+SELECT 'This is a test' FROM REP;
+
+SELECT rep_num, 'This is a test' FROM REP;
+
+-- SELECT DISTINCT
+SELECT DISTINCT 'This is a test' FROM REP;
+SELECT RATE FROM REP;
+SELECT DISTINCT RATE FROM REP;
+
+-- Different WHERE Clause 
+-- Computed column
+SELECT * FROM REP
+WHERE Commission * 1.1 > 40000;
+
+-- Compound condition: String and Number
+SELECT * FROM REP
+WHERE Commission * 1.1 < 40000
+AND State = 'CA';
+
+SELECT * FROM REP
+WHERE Commission * 1.1 < 40000
+OR State = 'CA';
+
+SELECT * FROM REP
+WHERE NOT Commission * 1.1 > 40000;
+
+-- IN
+SELECT * FROM REP
+WHERE Rate IN (0.06, 0.08);
+
+SELECT * FROM REP
+WHERE City IN ('Grove', 'Northfield');
+
+-- BETWEEN ... AND
+SELECT * FROM REP
+WHERE Commission BETWEEN 20000 AND 30000;
+
+-- No data when lower boundry is higher than upper boundry
+SELECT * FROM REP
+WHERE Commission BETWEEN 30000 AND 20000;
+
+-- BETWEEN ... AND is inclusive of boundries
+SELECT * FROM REP
+WHERE REP_NUM BETWEEN '15' AND '35';
+
+-- String comparison
+SELECT * FROM REP
+WHERE City < 'gullton';
+
+-- LIKE
+SELECT * FROM REP
+WHERE City LIKE 'North%';
+
+SELECT * FROM REP
+WHERE City LIKE 'north%';
+
+SELECT * FROM REP
+WHERE State LIKE 'C_';
+
+-- Returns nothing
+SELECT * FROM REP
+WHERE State LIKE 'C__';
+
+-- Returns Everything starting with C
+SELECT * FROM REP
+WHERE State LIKE 'C%%';
+
+INSERT INTO REP VALUES ('55','Jimmy','Bennett','123 Main St','X_Y','%_','00000',12345,0.06);
+
+SELECT * FROM REP
+WHERE State LIKE '_\\_' ESCAPE '\\';
+
+SELECT * FROM REP
+WHERE State LIKE '%\\%%' ESCAPE '\\';
+
+
+-- NULL processing in WHERE Clause
+DELETE FROM REP;
+INSERT INTO REP VALUES ('15','Campos','Rafael','724 Vinca Dr.','Grove','NY','10092',23457.50,0.06);
+INSERT INTO REP (Rep_Num, LAST_NAME, FIRST_NAME, STREET, CITY) VALUES ('30','Grady','Megan','632 Liatris St.','Fullton');
+
+SELECT * FROM REP;
+
+SELECT * FROM REP
+WHERE State = NULL;
+
+SELECT * FROM REP
+WHERE State <> NULL;
+
+SELECT * FROM REP
+WHERE State IN (NULL);
+
+SELECT * FROM REP
+WHERE State IS NULL;
+
+
+-- ORDER BY
+DELETE FROM REP;
+INSERT INTO REP VALUES
+('15','Campos','Rafael','724 Vinca Dr.','Grove','CA','90092',23457.50,0.06),
+('30','Grady','Megan','632 Liatris St.','Fullton','CA','90085',41317.00,0.08),
+('45','Tian','Hui','1785 Tyler Ave','Northfield','CA','90098',27789.25,0.06),
+('60','Sefton','Janet','267 Oakley St','Congaree','CA','90097',0.00,0.06);
+('61','Bennett','Janet','267 Oakley St','Congaree','CA','90097',0.00,0.06);
+
+SELECT * FROM REP ORDER BY First_Name;
+SELECT * FROM REP ORDER BY First_Name DESC;
+SELECT * FROM REP ORDER BY First_Name DESC, Last_Name ASC;
+
+SELECT * FROM REP ORDER BY 3 DESC, 2 ASC;
+
+SELECT * FROM REP ORDER BY COMMISSION;
+
+SELECT * FROM REP ORDER BY COMMISSION * 1.1;
+
+
+-- ORDER BY with NULL
+DELETE FROM REP;
+INSERT INTO REP VALUES ('15','Campos','Rafael','724 Vinca Dr.','Grove','NY','10092',23457.50,0.06);
+INSERT INTO REP (Rep_Num, LAST_NAME, FIRST_NAME, STREET, CITY) VALUES ('30','Grady','Megan','632 Liatris St.','Fullton');
+INSERT INTO REP VALUES ('45','Tian','Hui','1785 Tyler Ave','Northfield','CA','90098',27789.25,0.06);
+
+SELECT * FROM REP ORDER BY State ASC;
+SELECT * FROM REP ORDER BY State DESC;

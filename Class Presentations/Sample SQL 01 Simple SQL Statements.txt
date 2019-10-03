@@ -1,0 +1,94 @@
+CREATE TABLE REP
+(Rep_Num Char(2) PRIMARY KEY,
+LAST_NAME CHAR(15) NOT NULL,
+FIRST_NAME CHAR(15) NOT NULL,
+STREET CHAR(15),
+CITY CHAR(15),
+STATE CHAR(2),
+POSTAL_CODE CHAR(5),
+COMMISSION DECIMAL(7,2),
+RATE DECIMAL(3,2) );
+
+-- Examples of INSERT. Differences between decimal and string 
+INSERT INTO REP VALUES ('15','Campos','Rafael','724 Vinca Dr.','Grove','CA','90092',23457.50,0.06);
+
+CREATE TABLE DATA_TYPE_SAMPLE (
+ID_Num INT,
+FIRST_NAME CHAR(10),
+LAST_NAME VARCHAR(10),
+Salary DECIMAL(7,2));
+
+INSERT INTO DATA_TYPE_SAMPLE VALUES (1, 'John', 'Doe', 123.45);
+
+-- Try out on different combinations
+-- -- INT -> Float
+INSERT INTO DATA_TYPE_SAMPLE VALUES (1.7, 'John', 'Doe', 123.45);
+-- -- DECIMAL -> INT
+INSERT INTO DATA_TYPE_SAMPLE VALUES (1, 'John', 'Doe', 123);
+-- -- DECIMAL Precision
+INSERT INTO DATA_TYPE_SAMPLE VALUES (1, 'John', 'Doe', 123.4567);
+-- -- CHAR(11)
+INSERT INTO DATA_TYPE_SAMPLE VALUES (1, 'JohnAAAAAAA', 'Doe', 123.45);
+-- -- VARCHAR(11)
+INSERT INTO DATA_TYPE_SAMPLE VALUES (1, 'John', 'DoeAAAAAAAA', 123.45);
+-- -- Difference between CHAR and VARCHAR
+SELECT '#' + FIRST_NAME + '#', '#' + LAST_NAME + '#'
+FROM DATA_TYPE_SAMPLE;
+
+DROP TABLE DATA_TYPE_SAMPLE;
+
+
+
+
+
+SELECT * FROM REP;
+
+-- DROP, re-CREATE
+
+-- DELETE, re-INSERT 
+DELETE FROM REP;
+INSERT INTO REP VALUES ('15','Campos','Rafael','724 Vinca Dr.','Grove','CA','90092',23457.50,0.06);
+INSERT INTO REP VALUES ('30','Grady','Megan','632 Liatris St.','Fullton','CA','90085',41317.00,0.08);
+INSERT INTO REP VALUES ('45','Tian','Hui','1785 Tyler Ave','Northfield','CA','90098',27789.25,0.06);
+
+-- UPDATE
+DELETE FROM REP;
+INSERT INTO REP (Rep_Num, LAST_NAME, FIRST_NAME, STREET, CITY) VALUES ('30','Grady','Megan','632 Liatris St.','Fullton');
+
+UPDATE REP SET 
+    STATE = 'CA',
+    POSTAL_CODE = '90085',
+    COMMISSION = 41317.00,
+    RATE = 0.08
+;
+
+SELECT * FROM REP;
+
+-- UPDATE for all --- note that last 4 columns of Rep 15 is also changed
+DELETE FROM REP;
+INSERT INTO REP VALUES ('15','Campos','Rafael','724 Vinca Dr.','Grove','NY','10092',23457.50,0.06);
+INSERT INTO REP (Rep_Num, LAST_NAME, FIRST_NAME, STREET, CITY) VALUES ('30','Grady','Megan','632 Liatris St.','Fullton');
+
+UPDATE REP SET 
+    STATE = 'CA',
+    POSTAL_CODE = '90085',
+    COMMISSION = 41317.00,
+    RATE = 0.08
+;
+
+SELECT * FROM REP;
+
+
+-- Last four columns are missing 
+INSERT INTO REP (Rep_Num, LAST_NAME, FIRST_NAME, STREET, CITY) VALUES ('30','Grady','Megan','632 Liatris St.','Fullton');
+
+SELECT * FROM REP;
+
+-- INSERT with NULL
+INSERT INTO REP VALUES ('45','Tian','Hui','1785 Tyler Ave','Northfield',NULL,NULL,NULL,NULL);
+
+SELECT * FROM REP;
+
+-- Will error out
+INSERT INTO REP (Rep_Num, LAST_NAME) VALUES ('99','Jun');
+
