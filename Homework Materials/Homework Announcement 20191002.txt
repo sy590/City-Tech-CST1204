@@ -1,0 +1,52 @@
+
+Hi everyone,
+
+
+Class slides for yesterday's session, together with sample SQLs we used in class, have been uploaded to the Blackboard Content section.
+
+
+There are two homework assignments this week:
+
+
+Homework 1: SQLPlus access
+
+Tonight after most of you left, Marlon and Md tried once more and were able to login into CSTTS_Lab. We believe there is a limit of how many students may log in at the same time. I will talk to IT technicians on this limit. Meanwhile, please run from G600 at a random time to see:
+
+
+1. whether you can login into CSTTS_Lab, if you haven't been able to do so,
+
+2. if yes to Q1, whether you can login into SQLPlus using your emplID@orcl (password tester), and 
+
+3. if yes to Q2, whether you can run the following simple SQL:
+
+
+CREATE TABLE test_tbl (id int);
+
+INSERT INTO test_tbl VALUES (1);
+
+SELECT * from test_tbl;
+
+DROP TABLE test_tbl;
+
+
+Please take a screenshot of each statement and its result and send the four screenshots to me. 
+
+
+Make sure you try it a couple of times at different times. If, after two or three tries, you still cannot access CSTTS_Lab, please also let me know too.
+
+
+Homework 2: Simple UPDATE statement exercises
+
+Chapter 6 exercise questions for Colonial Adventure Tours 
+
+
+I have uploaded homework template file to Content section. Please use the template file for homework. Make sure you run your SQL before submitting the answers.
+
+
+Also, for questions regarding TEST ONE, please feel free to send me an email. I will be more than glad to go through the test with you, either in person or on the phone. Our next session will be on Mon 10/07. Please make sure to attend.
+
+
+Thanks!
+
+
+Prof.
