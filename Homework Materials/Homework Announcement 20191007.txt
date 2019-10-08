@@ -1,0 +1,41 @@
+
+Hi everyone,
+
+
+The latest class slides, sample SQL (Sample SQL 03 WHERE and ORDER BY), homework templates, and prev homework answer have all been uploaded to the Blackboard Content section.
+
+
+Homework 1: SQLPlus access
+
+
+Some of you have already completed this task. For those who haven't, please make sure you complete this ASAP. Please remote desktop into CSTTS_LAB (not CSTTS), open up Database folder on your desktop, login into SQLPlus using your emplID@orcl (password tester), and run the following simple SQL:
+
+
+CREATE TABLE test_tbl (id int);
+
+INSERT INTO test_tbl VALUES (1);
+
+SELECT * from test_tbl;
+
+DROP TABLE test_tbl;
+
+
+Please take a screenshot of the statement execution results and send the screenshot to me. You should be able to complete all four statements in one screen.
+
+
+Make sure you try it a couple of times at different times. If, after two or three tries, you still cannot access CSTTS_Lab, please let me know.
+
+
+Homework 2: Simple SQL statement exercises
+
+
+Chapter 4 exercise questions 1-10 for TAL Distributors. Template: Ch4-1 TAL Exercise Question Template.txt
+
+Chapter 4 exercise questions 1-6 for Colonial Adventure Tours. Template: Ch4-1 Colonial Exercise Question Template.txt
+
+
+I have uploaded homework template file to Content section. Please use the template file for homework. Make sure you run your SQL before submitting the answers.
+
+
+Prof.
+

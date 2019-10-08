@@ -1,0 +1,100 @@
+----------------------------------------------------------------
+-- Exercise Questions for Colonial Adventure Tour in Chapter 6 
+--
+-- Please write down your SQL statements below line by line in 
+--   designated place, with proper separators (;).
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+-- Exercise question 01
+----------------------------------------------------------------
+CREATE TABLE PADDLING (
+TRIP_ID DECIMAL(3,0) PRIMARY KEY,
+TRIP_NAME CHAR(75),
+STATE CHAR(2),
+DISTANCE DECIMAL(4,0),
+MAX_GRP_SIZE DECIMAL(4,0),
+SEASON CHAR(20)
+);
+
+----------------------------------------------------------------
+-- Exercise question 02
+----------------------------------------------------------------
+INSERT INTO PADDLING
+SELECT 
+    TRIP_ID,
+    TRIP_NAME,
+    STATE,
+    DISTANCE,
+    MAX_GRP_SIZE,
+    SEASON
+FROM TRIP
+WHERE TYPE = 'PADDLING';
+
+----------------------------------------------------------------
+-- Exercise question 03
+----------------------------------------------------------------
+UPDATE PADDLING
+SET MAX_GRP_SIZE = MAX_GRP_SIZE + 2
+WHERE STATE = 'CT';
+
+----------------------------------------------------------------
+-- Exercise question 04
+----------------------------------------------------------------
+INSERT INTO PADDLING VALUES (43, 'Lake Chapmplain Tour', 'VT', 12, 16, 'Summer');
+
+----------------------------------------------------------------
+-- Exercise question 05
+----------------------------------------------------------------
+DELETE FROM PADDLING
+WHERE TRIP_ID = 23;
+
+----------------------------------------------------------------
+-- Exercise question 06
+----------------------------------------------------------------
+UPDATE PADDLING
+SET DISTANCE = NULL
+WHERE TRIP_NAME = 'Pontook Reservoir Tour';
+
+----------------------------------------------------------------
+-- Exercise question 07
+----------------------------------------------------------------
+ALTER TABLE PADDLING ADD DIFFICULTY_LEVEL CHAR(3);
+
+UPDATE PADDLING SET DIFFICULTY_LEVEL = 'MOD';
+
+----------------------------------------------------------------
+-- Exercise question 08
+----------------------------------------------------------------
+UPDATE PADDLING
+SET DIFFICULTY_LEVEL = 'HRD'
+WHERE TRIP_NAME = 'Lake Chapmplain Tour';
+
+----------------------------------------------------------------
+-- Exercise question 09
+----------------------------------------------------------------
+ALTER TABLE PADDLING MODIFY SEASON CHAR(25);
+
+----------------------------------------------------------------
+-- Exercise question 10
+----------------------------------------------------------------
+ALTER TABLE PADDLING MODIFY DIFFICULTY_LEVEL CHAR(3) NOT NULL;
+
+----------------------------------------------------------------
+-- Exercise question 11
+----------------------------------------------------------------
+DROP TABLE PADDLING;
+
+----------------------------------------------------------------
+-- Exercise question 12
+----------------------------------------------------------------
+CREATE TABLE PADDLING (
+TRIP_ID DECIMAL(3,0) PRIMARY KEY,
+TRIP_NAME VARCHAR(75),
+STATE VARCHAR(2),
+DISTANCE DECIMAL(4,0),
+MAX_GRP_SIZE DECIMAL(4,0),
+SEASON VARCHAR(20)
+);
+DROP TABLE PADDLING;
+
