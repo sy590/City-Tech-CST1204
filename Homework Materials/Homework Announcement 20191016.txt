@@ -1,0 +1,16 @@
+Hi everyone,
+
+
+The following items have been posted to Content section: class slides, sample SQL used in class, previous homework solutions, and new homework template file. In addition, you can go to my GitHub repository to download the SQL scripts to create and populate TAL, Colonial, and Solmaris databases. The link is:
+
+
+https://github.com/junshan0/City-Tech-CST1204
+
+
+Today’s homework is Ch4’s Exercise Questions 1-12 for Solmaris, which is the the same hands-on questions we did in class. Please note that homework makes up 30% of final grade. If you have any concern on homework submission please let me know. I reply to all homework submissions so if you have not received any email from me you should come to me immediately.
+
+
+As discussed in class, test two will be hold on next Monday 10/21. All test topics are covered in homework. So in order to have a good grade you should make sure you can complete homework independently. Good luck!
+
+
+Prof.
