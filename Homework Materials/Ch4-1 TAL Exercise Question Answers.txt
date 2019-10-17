@@ -1,0 +1,94 @@
+----------------------------------------------------------------
+-- Exercise Questions for TAL Distributor in Chapter 4 
+-- Part I: SELECT ... WHERE
+--
+-- Please write down your SQL statements below line by line in 
+--   designated place, with proper separators (;).
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+-- Exercise question 01
+----------------------------------------------------------------
+SELECT
+    ITEM_NUM,
+    DESCRIPTION,
+    PRICE 
+FROM ITEM;
+
+
+----------------------------------------------------------------
+-- Exercise question 02
+----------------------------------------------------------------
+SELECT * FROM ORDERS;
+
+----------------------------------------------------------------
+-- Exercise question 03
+----------------------------------------------------------------
+SELECT CUSTOMER_NAME
+FROM CUSTOMER
+WHERE CREDIT_LIMIT > 10000;
+
+----------------------------------------------------------------
+-- Exercise question 04
+----------------------------------------------------------------
+SELECT ORDER_NUM
+FROM ORDERS
+WHERE CUSTOMER_NUM = '126'
+AND ORDER_DATE = TO_DATE('10/15/2015', 'MM/DD/YYYY');
+
+----------------------------------------------------------------
+-- Exercise question 05
+----------------------------------------------------------------
+SELECT
+    CUSTOMER_NUM,
+    CUSTOMER_NAME
+FROM CUSTOMER
+WHERE REP_NUM IN ('30', '45')
+
+----------------------------------------------------------------
+-- Exercise question 06
+----------------------------------------------------------------
+SELECT
+    ITEM_NUM,
+    DESCRIPTION
+FROM ITEM
+WHERE CATEGORY <> 'PZL';
+
+----------------------------------------------------------------
+-- Exercise question 07
+----------------------------------------------------------------
+SELECT
+    ITEM_NUM,
+    DESCRIPTION,
+    ON_HAND
+FROM ITEM
+WHERE ON_HAND BETWEEN 20 AND 40;
+
+----------------------------------------------------------------
+-- Exercise question 08
+----------------------------------------------------------------
+SELECT
+    ITEM_NUM,
+    DESCRIPTION,
+    ON_HAND * PRICE AS ON_HAND_VALUE
+FROM ITEM
+WHERE CATEGORY = 'TOY';
+
+----------------------------------------------------------------
+-- Exercise question 09
+----------------------------------------------------------------
+SELECT
+    ITEM_NUM,
+    DESCRIPTION,
+    ON_HAND * PRICE AS ON_HAND_VALUE
+FROM ITEM
+WHERE ON_HAND * PRICE > 1500;
+
+----------------------------------------------------------------
+-- Exercise question 10
+----------------------------------------------------------------
+SELECT
+    ITEM_NUM,
+    DESCRIPTION
+FROM ITEM
+WHERE CATEGORY IN ('GME', 'PZL');

@@ -1,0 +1,67 @@
+----------------------------------------------------------------
+-- Exercise Questions for Colonial Adventure Tour in Chapter 4 
+-- Part I: SELECT ... WHERE
+--
+-- Please write down your SQL statements below line by line in 
+--   designated place, with proper separators (;).
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+-- Exercise question 01
+----------------------------------------------------------------
+SELECT LAST_NAME
+FROM GUIDE
+
+WHERE STATE <> 'MA';
+
+----------------------------------------------------------------
+-- Exercise question 02
+----------------------------------------------------------------
+
+
+SELECT TRIP_NAME 
+FROM TRIP
+WHERE TYPE = 'Biking';
+
+----------------------------------------------------------------
+-- Exercise question 03
+----------------------------------------------------------------
+SELECT TRIP_NAME 
+FROM TRIP
+WHERE SEASON = 'Summer';
+
+----------------------------------------------------------------
+-- Exercise question 04
+----------------------------------------------------------------
+
+SELECT TRIP_NAME 
+FROM TRIP
+WHERE TYPE = 'Biking'
+AND DISTANCE > 10;
+
+----------------------------------------------------------------
+-- Exercise question 05
+----------------------------------------------------------------
+SELECT 
+    CUSTOMER_NUM,
+    
+LAST_NAME,
+
+    FIRST_NAME
+FROM TRIP_CUSTOMER
+WHERE STATE IN ('NJ', 'NY', 'PA');
+
+----------------------------------------------------------------
+-- Exercise question 06
+----------------------------------------------------------------
+SELECT 
+    STATE, 
+    CUSTOMER_NUM,
+    
+LAST_NAME,
+
+    FIRST_NAME
+FROM TRIP_CUSTOMER
+WHERE STATE IN ('NJ', 'NY', 'PA')
+ORDER BY STATE DESC, LAST_NAME ASC;
+
