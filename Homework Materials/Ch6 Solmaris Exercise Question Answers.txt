@@ -1,0 +1,104 @@
+----------------------------------------------------------------
+-- Exercise Questions for Solmaris Condominium in Chapter 6 
+--
+-- Please write down your SQL statements below line by line in 
+--   designated place, with proper separators (;).
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+-- Exercise question 01
+----------------------------------------------------------------
+CREATE TABLE LARGE_CONDO (
+LOCATION_NUM DECIMAL(2,0),
+UNIT_NUM CHAR(3),
+BDRMS DECIMAL(2,0),
+BATHS DECIMAL(2,0),
+CONDO_FEE DECIMAL(6,2),
+OWNER_NUM CHAR(5),
+PRIMARY KEY (LOCATION_NUM, UNIT_NUM)
+);
+
+----------------------------------------------------------------
+-- Exercise question 02
+----------------------------------------------------------------
+INSERT INTO LARGE_CONDO
+SELECT 
+    LOCATION_NUM,
+    UNIT_NUM,
+    BDRMS,
+    BATHS,
+    CONDO_FEE,
+    OWNER_NUM
+FROM CONDO_UNIT
+
+WHERE SQR_FT > 1500;
+
+----------------------------------------------------------------
+-- Exercise question 03
+----------------------------------------------------------------
+UPDATE LARGE_CONDO
+SET CONDO_FEE = CONDO_FEE + 150;
+
+----------------------------------------------------------------
+-- Exercise question 04
+----------------------------------------------------------------
+UPDATE LARGE_CONDO
+SET CONDO_FEE = CONDO_FEE * .99
+WHERE CONDO_FEE > 750;
+
+----------------------------------------------------------------
+-- Exercise question 05
+----------------------------------------------------------------
+INSERT INTO LARGE_CONDO
+VALUES (1, '605', 3, 3, 775, 'FE182');
+
+----------------------------------------------------------------
+-- Exercise question 06
+----------------------------------------------------------------
+DELETE FROM LARGE_CONDO
+WHERE OWNER_NUM = 'AN175';
+
+----------------------------------------------------------------
+-- Exercise question 07
+----------------------------------------------------------------
+UPDATE LARGE_CONDO
+SET BDRMS = NULL
+WHERE LOCATION_NUM = 1 AND UNIT_NUM = '503';
+
+----------------------------------------------------------------
+-- Exercise question 08
+----------------------------------------------------------------
+ALTER TABLE LARGE_CONDO ADD OCCUPIED CHAR(1);
+UPDATE LARGE_CONDO SET OCCUPIED = 'Y';
+
+----------------------------------------------------------------
+-- Exercise question 09
+----------------------------------------------------------------
+UPDATE LARGE_CONDO 
+SET OCCUPIED = 'N'
+WHERE UNIT_NUM = 'C06';
+
+----------------------------------------------------------------
+-- Exercise question 10
+----------------------------------------------------------------
+ALTER TABLE LARGE_CONDO MODIFY CONDO_FEE DECIMAL(6,2) NOT NULL;
+
+----------------------------------------------------------------
+-- Exercise question 11
+----------------------------------------------------------------
+DROP TABLE LARGE_CONDO;
+
+----------------------------------------------------------------
+-- Exercise question 12
+----------------------------------------------------------------
+CREATE TABLE LARGE_CONDO (
+LOCATION_NUM INT,
+UNIT_NUM CHAR(3),
+BDRMS INT,
+BATHS INT,
+CONDO_FEE DECIMAL(6,2),
+OWNER_NUM CHAR(5),
+PRIMARY KEY (LOCATION_NUM, UNIT_NUM)
+);
+DROP TABLE LARGE_CONDO;
+

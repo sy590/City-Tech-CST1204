@@ -1,0 +1,32 @@
+----------------------------------------------------------------
+-- Exercise Questions for TAL Distributor in Chapter 8 
+--
+-- Please write down your SQL statements below line by line in 
+--   designated place, with proper separators (;).
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+-- Exercise question 01
+----------------------------------------------------------------
+SELECT 
+    i.ITEM_NUM,
+    UPPER(i.DESCRIPTION)
+FROM ITEM i;
+
+----------------------------------------------------------------
+-- Exercise question 02
+----------------------------------------------------------------
+SELECT 
+    CUSTOMER_NUM,
+    CUSTOMER_NAME
+FROM CUSTOMER
+WHERE UPPER(CITY) = 'GROVE';
+
+----------------------------------------------------------------
+-- Exercise question 03
+----------------------------------------------------------------
+SELECT 
+    CUSTOMER_NUM,
+    CUSTOMER_NAME,
+    ROUND(BALANCE)
+FROM CUSTOMER;
