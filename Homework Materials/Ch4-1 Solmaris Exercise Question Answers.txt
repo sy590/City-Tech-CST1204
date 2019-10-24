@@ -1,0 +1,128 @@
+----------------------------------------------------------------
+-- Exercise Questions for Solmaris Condominium in Chapter 4
+-- Part I: SELECT ... WHERE
+--
+-- Please write down your SQL statements below line by line in 
+--   designated place, with proper separators (;).
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+-- Exercise question 01
+----------------------------------------------------------------
+SELECT
+    OWNER_NUM,
+    LAST_NAME,
+    FIRST_NAME
+FROM OWNER
+;
+
+----------------------------------------------------------------
+-- Exercise question 02
+----------------------------------------------------------------
+SELECT * FROM LOCATION;
+
+----------------------------------------------------------------
+-- Exercise question 03
+----------------------------------------------------------------
+SELECT
+    LAST_NAME,
+    FIRST_NAME
+FROM OWNER
+
+WHERE CITY = 'Bowton';
+
+----------------------------------------------------------------
+-- Exercise question 04
+----------------------------------------------------------------
+SELECT
+    LAST_NAME,
+    FIRST_NAME
+FROM OWNER
+
+WHERE CITY <> 'Bowton';
+
+----------------------------------------------------------------
+-- Exercise question 05
+----------------------------------------------------------------
+
+
+SELECT LOCATION_NUM, 
+UNIT_NUM
+FROM CONDO_UNIT
+
+WHERE SQR_FT <= 1200;
+
+----------------------------------------------------------------
+-- Exercise question 06
+----------------------------------------------------------------
+SELECT LOCATION_NUM, 
+UNIT_NUM
+FROM CONDO_UNIT
+
+WHERE BDRMS = 3;
+
+----------------------------------------------------------------
+-- Exercise question 07
+----------------------------------------------------------------
+SELECT 
+UNIT_NUM
+FROM CONDO_UNIT
+
+WHERE BDRMS = 2
+AND LOCATION_NUM = 2;
+
+----------------------------------------------------------------
+-- Exercise question 08
+----------------------------------------------------------------
+SELECT 
+UNIT_NUM
+FROM CONDO_UNIT
+
+WHERE CONDO_FEE BETWEEN 550 AND 650;
+
+----------------------------------------------------------------
+-- Exercise question 09
+----------------------------------------------------------------
+SELECT 
+UNIT_NUM
+FROM CONDO_UNIT
+
+WHERE CONDO_FEE < 500
+AND LOCATION_NUM = 1;
+
+----------------------------------------------------------------
+-- Exercise question 10
+----------------------------------------------------------------
+SELECT
+    CONDO_ID,
+
+    CATEGORY_NUM,
+    EST_HOURS,
+    EST_HOURS * 35 AS EST_LABOR_COST
+FROM SERVICE_REQUEST
+;
+
+----------------------------------------------------------------
+-- Exercise question 11
+----------------------------------------------------------------
+
+SELECT 
+    LAST_NAME,
+    FIRST_NAME
+FROM OWNER
+
+WHERE STATE IN ('FL', 'GA', 'SC');
+
+----------------------------------------------------------------
+-- Exercise question 12
+----------------------------------------------------------------
+SELECT
+    LOCATION_NUM,
+    UNIT_NUM,
+    SQR_FT,
+    CONDO_FEE
+FROM CONDO_UNIT
+
+ORDER BY CONDO_FEE/SQR_FT;
+
+
