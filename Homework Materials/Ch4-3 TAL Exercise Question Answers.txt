@@ -1,0 +1,49 @@
+----------------------------------------------------------------
+-- Exercise Questions for TAL Distributor in Chapter 4 
+-- Part III : GROUP BY
+--
+-- Please write down your SQL statements below line by line in 
+--   designated place, with proper separators (;).
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+-- Exercise question 19
+----------------------------------------------------------------
+SELECT REP_NUM, SUM(BALANCE)
+FROM CUSTOMER
+GROUP BY REP_NUM
+ORDER BY REP_NUM;
+
+----------------------------------------------------------------
+-- Exercise question 20
+----------------------------------------------------------------
+SELECT REP_NUM, SUM(BALANCE)
+FROM CUSTOMER
+GROUP BY REP_NUM
+HAVING SUM(BALANCE) > 5000
+ORDER BY REP_NUM;
+
+----------------------------------------------------------------
+-- Exercise question 21
+----------------------------------------------------------------
+SELECT ITEM_NUM
+FROM ITEM
+WHERE DESCRIPTION IS NULL;
+
+----------------------------------------------------------------
+-- Exercise question 22
+----------------------------------------------------------------
+SELECT ITEM_NUM, DESCRIPTION
+FROM ITEM
+WHERE DESCRIPTION LIKE '%Set%'
+AND CATEGORY IN ('PZL', 'TOY');
+
+----------------------------------------------------------------
+-- Exercise question 23
+----------------------------------------------------------------
+SELECT 
+    ITEM_NUM, 
+    DESCRIPTION, 
+    PRICE * .9 AS DISCOUNTED_PRICE
+FROM ITEM;
+

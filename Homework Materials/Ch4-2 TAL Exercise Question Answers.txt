@@ -1,0 +1,76 @@
+----------------------------------------------------------------
+-- Exercise Questions for TAL Distributor in Chapter 4 
+-- Part II : Function
+--
+-- Please write down your SQL statements below line by line in 
+--   designated place, with proper separators (;).
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+-- Exercise question 11
+----------------------------------------------------------------
+SELECT
+    CUSTOMER_NUM,
+    CUSTOMER_NAME
+FROM CUSTOMER
+WHERE CUSTOMER_NAME LIKE 'C%';
+
+----------------------------------------------------------------
+-- Exercise question 12
+----------------------------------------------------------------
+SELECT * FROM ITEM
+ORDER BY DESCRIPTION;
+
+----------------------------------------------------------------
+-- Exercise question 13
+----------------------------------------------------------------
+SELECT * FROM ITEM
+ORDER BY STOREHOUSE, ITEM_NUM;
+
+----------------------------------------------------------------
+-- Exercise question 14
+----------------------------------------------------------------
+SELECT COUNT(*)
+FROM CUSTOMER
+
+WHERE BALANCE > CREDIT_LIMIT;
+
+----------------------------------------------------------------
+-- Exercise question 15
+----------------------------------------------------------------
+SELECT SUM(BALANCE)
+FROM CUSTOMER
+
+WHERE BALANCE < CREDIT_LIMIT
+AND REP_NUM = '15';
+
+----------------------------------------------------------------
+-- Exercise question 16
+----------------------------------------------------------------
+SELECT 
+    ITEM_NUM,
+    DESCRIPTION,
+    ON_HAND * PRICE AS ON_HAND_VALUE
+FROM ITEM
+WHERE ON_HAND > (
+    SELECT AVG(ON_HAND) FROM ITEM
+);
+
+----------------------------------------------------------------
+-- Exercise question 17
+----------------------------------------------------------------
+SELECT MIN(PRICE)
+FROM ITEM;
+
+----------------------------------------------------------------
+-- Exercise question 18
+----------------------------------------------------------------
+
+SELECT 
+    ITEM_NUM,
+    DESCRIPTION,
+    PRICE
+FROM ITEM
+WHERE PRICE = (
+    SELECT MIN(PRICE) FROM ITEM
+);

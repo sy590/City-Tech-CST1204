@@ -1,0 +1,34 @@
+
+----------------------------------------------------------------
+-- Exercise Questions for Colonial Adventure Tour in Chapter 8
+--
+-- Please write down your SQL statements below line by line in 
+--   designated place, with proper separators (;).
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+-- Exercise question 01
+----------------------------------------------------------------
+SELECT
+GUIDE_NUM,
+UPPER(LAST_NAME),
+LOWER(FIRST_NAME)
+FROM GUIDE;
+
+----------------------------------------------------------------
+-- Exercise question 02
+----------------------------------------------------------------
+SELECT 
+TRIP_ID,
+TRIP_NAME
+FROM TRIP
+WHERE UPPER(START_LOCATION) = 'BAR HARBOR';
+
+----------------------------------------------------------------
+-- Exercise question 03
+----------------------------------------------------------------
+SELECT
+RESERVATION_ID,
+TRIP_DATE,
+ROUND(TRIP_PRICE)
+FROM RESERVATION;
