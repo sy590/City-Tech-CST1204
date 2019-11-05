@@ -24,7 +24,7 @@ WHERE OTHER_FEES <> 0;
 -- E3: For each location, find out the unique count of owners. The result should be called "Unique_Owner"
 ----------------------------------------------------------------
 
-SELECT Location_Num, Count(Owner_Num) AS Unique_Owner
+SELECT Location_Num, Count(DISTINCT Owner_Num) AS Unique_Owner
 FROM CONDO_UNIT
 GROUP BY Location_Num;
 
