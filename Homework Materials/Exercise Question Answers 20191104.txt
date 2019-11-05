@@ -1,0 +1,49 @@
+----------------------------------------------------------------
+-- Note: The following three questions are based on the schema of Colonial Adventure Tours example
+--
+-- Exercise question E1: For each trip in RESERVATION table whose trip prices are all higher than $65, 
+--     list the TRIP_ID, number of reservations, and maximum trip price.
+----------------------------------------------------------------
+
+SELECT TRIP_ID, COUNT(*), MAX(TRIP_PRICE)
+FROM RESERVATION
+GROUP BY TRIP_ID
+HAVING min(TRIP_PRICE) > 65;
+
+----------------------------------------------------------------
+-- Exercise question E2: Find all trips who has at least one reservation that other fee is not $0.
+----------------------------------------------------------------
+
+SELECT Trip_ID
+FROM RESERVATION
+WHERE OTHER_FEES <> 0;
+
+----------------------------------------------------------------
+-- Note: The following three questions are based on the schema of Solmaris Condominium Group example
+--
+-- E3: For each location, find out the unique count of owners. The result should be called "Unique_Owner"
+----------------------------------------------------------------
+
+SELECT Location_Num, Count(Owner_Num) AS Unique_Owner
+FROM CONDO_UNIT
+GROUP BY Location_Num;
+
+----------------------------------------------------------------
+-- E4: Find out the location whose all apartments have 2 or less bathrooms.
+----------------------------------------------------------------
+
+SELECT Location_Num
+FROM CONDO_UNIT
+GROUP BY Location_Num
+HAVING MAX(BATHS) < 3;
+
+----------------------------------------------------------------
+-- E5: Find out the apartment whose square footage is larger than the average square foot of all apartments.
+----------------------------------------------------------------
+
+SELECT CONDO_ID
+FROM CONDO_UNIT
+WHERE SQR_FT > (
+    SELECT AVG(SQR_FT)
+    FROM COMDO_UNIT
+);

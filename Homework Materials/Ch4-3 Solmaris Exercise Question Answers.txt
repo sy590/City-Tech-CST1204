@@ -1,0 +1,43 @@
+----------------------------------------------------------------
+-- Exercise Questions for Solmaris Condominium in Chapter 4
+-- Part III : GROUP BY
+--
+-- Please write down your SQL statements below line by line in 
+--   designated place, with proper separators (;).
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+-- Exercise question 13
+----------------------------------------------------------------
+SELECT LOCATION_NUM, COUNT(CONDO_ID)
+FROM CONDO_UNIT
+
+WHERE BDRMS = 1
+GROUP BY LOCATION_NUM;
+
+----------------------------------------------------------------
+-- Exercise question 14
+----------------------------------------------------------------
+SELECT SUM(CONDO_FEE)
+FROM CONDO_UNIT;
+
+----------------------------------------------------------------
+-- Exercise question 15
+----------------------------------------------------------------
+SELECT 
+    LAST_NAME,
+    FIRST_NAME
+FROM OWNER
+
+WHERE STATE = 'FL'
+ OR STATE = 'GA'
+ OR STATE = 'SC';
+
+----------------------------------------------------------------
+-- Exercise question 16
+----------------------------------------------------------------
+SELECT SERVICE_ID
+FROM SERVICE_REQUEST
+
+WHERE DESCRIPTION LIKE '%pantry%';
+

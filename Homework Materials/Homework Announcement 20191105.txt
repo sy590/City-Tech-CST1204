@@ -1,0 +1,19 @@
+
+Hi everyone,
+
+The class slides, sample SQL for UNION/INTERSECT/MINUS, and previous homework answers have been posted to Content section. To prepare Wednesday's Test Three, please review previous homework and make sure you have a clear understanding of GROUP BY and HAVING clause. FYI, UNION/INTERSECT/MINUS are not a part of Test Three and will be a part of Test Four. 
+
+Today's homework is:
+
+1. Ch4 exercise question 13 and 14 for Solmaris.
+2. Extra question 3, 4, and 5, all based on Solmaris schema
+
+E3: For each location, find out the unique count of owners. The result should be called "Unique_Owner"
+E4: Find out the location whose all apartments have 2 or less bathrooms.
+E5: Find out the apartment whose square footage is larger than the average square foot of all apartments.
+
+I have also posted the answers to the Content section. Please make sure you do the homework before checking answers and then you understand the answers clearly. Let me know if you have any questions.
+
+Prof.
+
+

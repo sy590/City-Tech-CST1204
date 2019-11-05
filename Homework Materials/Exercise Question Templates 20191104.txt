@@ -1,0 +1,25 @@
+----------------------------------------------------------------
+-- Note: The following three questions are based on the schema of Colonial Adventure Tours example
+--
+-- Exercise question E1: For each trip in RESERVATION table whose trip prices are all higher than $65, 
+--     list the TRIP_ID, number of reservations, and maximum trip price.
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+-- Exercise question E2: Find all trips who has at least one reservation that other fee is not $0.
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+-- Note: The following three questions are based on the schema of Solmaris Condominium Group example
+--
+-- E3: For each location, find out the unique count of owners. The result should be called "Unique_Owner"
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+-- E4: Find out the location whose all apartments have 2 or less bathrooms.
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+-- E5: Find out the apartment whose square footage is larger than the average square foot of all apartments.
+----------------------------------------------------------------
+

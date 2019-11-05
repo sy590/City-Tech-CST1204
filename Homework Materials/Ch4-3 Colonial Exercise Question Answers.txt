@@ -1,0 +1,123 @@
+----------------------------------------------------------------
+-- Exercise Questions for Colonial Adventure Tour in Chapter 4 
+-- Part III : GROUP BY
+--
+-- Please write down your SQL statements below line by line in 
+--   designated place, with proper separators (;).
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+-- Exercise question 07
+----------------------------------------------------------------
+SELECT COUNT(DISTINCT TRIP_ID)
+FROM TRIP
+WHERE STATE IN ('MA', 'ME');
+
+----------------------------------------------------------------
+-- Exercise question 08
+----------------------------------------------------------------
+SELECT STATE, COUNT(DISTINCT TRIP_ID)
+FROM TRIP
+GROUP BY STATE;
+
+----------------------------------------------------------------
+-- Exercise question 09
+----------------------------------------------------------------
+SELECT COUNT(*)
+FROM RESERVATION
+
+WHERE TRIP_PRICE BETWEEN 20 AND 75;
+
+----------------------------------------------------------------
+-- Exercise question 10
+----------------------------------------------------------------
+SELECT TYPE, COUNT(DISTINCT TRIP_ID)
+FROM TRIP
+GROUP BY TYPE;
+
+----------------------------------------------------------------
+-- Exercise question 11
+----------------------------------------------------------------
+SELECT
+    RESERVATION_ID,
+    TRIP_ID,
+    CUSTOMER_NUM,
+    NUM_PERSONS * (TRIP_PRICE + OTHER_FEES) 
+FROM RESERVATION
+
+WHERE NUM_PERSONS > 4;
+
+----------------------------------------------------------------
+-- Exercise question 12
+----------------------------------------------------------------
+SELECT TRIP_NAME
+FROM TRIP 
+WHERE TRIP_NAME LIKE '%Pond%';
+
+----------------------------------------------------------------
+-- Exercise question 13
+----------------------------------------------------------------
+SELECT LAST_NAME, FIRST_NAME
+FROM GUIDE
+
+WHERE HIRE_DATE < TO_DATE('06/10/2013', 'MM/DD/YYYY');
+
+----------------------------------------------------------------
+-- Exercise question 14
+----------------------------------------------------------------
+SELECT TYPE, AVG(DISTANCE), AVG(MAX_GRP_SIZE)
+FROM TRIP
+GROUP BY TYPE;
+
+----------------------------------------------------------------
+-- Exercise question 15
+----------------------------------------------------------------
+SELECT DISTINCT SEASON
+FROM TRIP;
+
+----------------------------------------------------------------
+-- Exercise question 16
+----------------------------------------------------------------
+SELECT RESERVATION_ID
+FROM RESERVATION
+WHERE TRIP_ID IN (
+    SELECT TRIP_ID
+    FROM TRIP
+    WHERE TYPE = 'Paddling'
+);
+
+----------------------------------------------------------------
+-- Exercise question 17
+----------------------------------------------------------------
+SELECT MAX(DISTANCE)
+FROM TRIP
+WHERE TYPE = 'Biking';
+
+----------------------------------------------------------------
+-- Exercise question 18
+----------------------------------------------------------------
+SELECT TRIP_ID, SUM(TRIP_PRICE)
+FROM RESERVATION
+GROUP BY TRIP_ID
+HAVING COUNT(*) > 1;
+
+----------------------------------------------------------------
+-- Exercise question 19
+----------------------------------------------------------------
+SELECT 
+    COUNT(*) AS CURRENT_TRIP, 
+    SUM(NUM_PERSONS) AS TOTAL_PERSON
+FROM RESERVATION
+WHERE TRIP_DATE > SYSDATE
+
+----------------------------------------------------------------
+-- Exercise question 20
+----------------------------------------------------------------
+SELECT
+    RESERVATION_ID,
+    TRIP_ID
+FROM RESERVATION
+WHERE TRIP_DATE 
+    BETWEEN TO_DATE('07/01/2016', 'MM/DD/YYYY')
+    AND TO_DATE('07/31/2016', 'MM/DD/YYYY');
+
