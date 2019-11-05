@@ -1,0 +1,39 @@
+-- Set operation statements
+DROP TABLE subset_1;
+DROP TABLE subset_2;
+
+CREATE TABLE subset_1 (
+col1 int,
+col2 char(5));
+
+CREATE TABLE subset_2 (
+col1 int,
+col2 char(5),
+col3 char(10));
+
+insert into subset_1 values (1, 'ID=1');
+insert into subset_1 values (1, 'ID=1');
+insert into subset_1 values (2, 'ID=2');
+insert into subset_1 values (3, 'ID=3');
+
+insert into subset_2 values (3, 'ID=3', 'ID=3   ');
+insert into subset_2 values (4, 'ID=4', 'ID=4   ');
+
+select col1, col2 from subset_1;
+select col1, col2 from subset_2;
+
+select col1, col2 from subset_1
+UNION
+select col1, col2 from subset_2;
+
+select col1, col2 from subset_1
+UNION ALL
+select col1, col2 from subset_2;
+
+select col1, col2 from subset_1
+INTERSECT
+select col1, col2 from subset_2;
+
+select col1, col2 from subset_1
+MINUS
+select col1, col2 from subset_2;
